@@ -12,5 +12,4 @@
 
       - name: Configuring the ingress controller.
         become: yes
-        k8s:
-            definition: "{{ lookup('template', '../../files/templates/NGINX-Ingress/svc_nginx_ingress_controller.yml.j2') | from_yaml }}"
+        shell: echo "{{ lookup('template', '../../files/templates/NGINX-Ingress/svc_nginx_ingress_controller.yml.j2') }}" | kubectl apply -f -

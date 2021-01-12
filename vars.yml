@@ -138,10 +138,10 @@ k8s_user_name: 'sergio'
 dashboard_load_balancer_address_pool: 'layer2'
 
 # The IP address within the Address Pool to which you want to bind the service.
-dashboard_load_balancer_ip: '192.168.1.170'
+dashboard_load_balancer_ip: '192.168.1.70'
 
 # The hostname with which you want to test connectivity to the IP Address after the deployment has completed.
-dashboard_hostname: 'amalthea.lan'
+dashboard_hostname: 'dash.lan'
 
 
 ###############################################################################################
@@ -278,25 +278,27 @@ nfs_reclaim_policy: 'Retain'
 metallb_peer_router: '192.168.1.1'
 
 # The AS Number of the router you wish to peer with.
-metallb_peer_asn: '64512'
+#metallb_peer_asn: '64512'
+metallb_peer_asn: ''
 
 # The names of your address pools.
-metallb_ap1_name: 'VLAN10'
-metallb_ap4_name: 'VLAN70'
-metallb_ap2_name: 'VLAN50'
-metallb_ap3_name: 'VLAN60'
+metallb_ap1_name: 'LAN'
+metallb_ap4_name: ''
+metallb_ap2_name: ''
+metallb_ap3_name: ''
 
 # The protocols of your address pools. (bgp|layer2)
-metallb_ap1_protocol: 'bgp'
-metallb_ap2_protocol: 'bgp'
-metallb_ap3_protocol: 'bgp'
-metallb_ap4_protocol: 'bgp'
+metallb_ap1_protocol: 'layer2'
+metallb_ap2_protocol: ''
+metallb_ap3_protocol: ''
+metallb_ap4_protocol: ''
 
 # The CIDRs of your address pools.
-metallb_ap1_cidr: '192.168.10.1/24'
-metallb_ap2_cidr: '192.168.50.1/24'
-metallb_ap3_cidr: '192.168.60.1/24'
-metallb_ap4_cidr: '192.168.70.1/24'
+#metallb_ap1_cidr: '192.168.1.1/24'
+metallb_ap1_cidr: '192.168.1.50-192.168.1.69'
+metallb_ap2_cidr: ''
+metallb_ap3_cidr: ''
+metallb_ap4_cidr: ''
 
 
 ###############################################################################################
@@ -307,7 +309,7 @@ metallb_ap4_cidr: '192.168.70.1/24'
 ###############################################################################################
 
 # The IP Address to use
-nginx_load_balancer_ip: '192.168.1.100'
+nginx_load_balancer_ip: '192.168.1.90'
 
 
 ###############################################################################################

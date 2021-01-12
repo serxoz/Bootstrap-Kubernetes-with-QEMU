@@ -8,8 +8,9 @@
 
       - name: Creating an service account to use with the Dashboard.
         become: yes
-        k8s:
-            definition: "{{ lookup('template', '../../files/templates/Service_Account/{{ item }}') | from_yaml }}"
+        #k8s:
+        #    definition: "{{ lookup('template', '../../files/templates/Service_Account/{{ item }}') | from_yaml }}"
+        shell: echo "{{ lookup('template', '../../files/templates/Service_Account/{{ item }}') }}" | kubectl apply -f -
         with_items:
             - "sa_personal.yml.j2"
             - "rb_personal.yml.j2"
@@ -96,8 +97,9 @@
 
       - name: Creating a Service to expose the Dashboard.
         become: yes
-        k8s:
-            definition: "{{ lookup('template', '../../files/templates/Dashboard/svc_dashboard.yml.j2') | from_yaml }}"
+        #k8s:
+        #    definition: "{{ lookup('template', '../../files/templates/Dashboard/svc_dashboard.yml.j2') | from_yaml }}"
+        shell: echo "{{ lookup('template', '../../files/templates/Dashboard/svc_dashboard.yml.j2') }}" | kubectl apply -f -
         when:
             - dashboard_load_balancer_address_pool is defined
             - dashboard_load_balancer_address_pool|length != 0
