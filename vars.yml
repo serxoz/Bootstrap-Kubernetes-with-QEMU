@@ -66,10 +66,10 @@ k8s_node2_size: '10G'
 k8s_node3_size: '10G'
 
 # IP Addresses
-k8s_master_ip: '192.168.1.80'
-k8s_node1_ip: '192.168.1.90'
-k8s_node2_ip: '192.168.1.91'
-k8s_node3_ip: '192.168.1.92'
+k8s_master_ip: '192.168.1.180'
+k8s_node1_ip: '192.168.1.190'
+k8s_node2_ip: '192.168.1.191'
+k8s_node3_ip: '192.168.1.192'
 
 # Subnet Sizes
 k8s_master_sn: '/24'
@@ -138,7 +138,7 @@ k8s_user_name: 'sergio'
 dashboard_load_balancer_address_pool: 'layer2'
 
 # The IP address within the Address Pool to which you want to bind the service.
-dashboard_load_balancer_ip: '192.168.1.70'
+dashboard_load_balancer_ip: '192.168.1.170'
 
 # The hostname with which you want to test connectivity to the IP Address after the deployment has completed.
 dashboard_hostname: 'dash.lan'
@@ -226,10 +226,10 @@ enable_syslog_logging: "true"
 ###############################################################################################
 
 # NFS server
-nfs_hostname: 'earth.sol.milkyway'
+nfs_hostname: '192.168.1.2'
 
 # NFS Mount Point
-nfs_mount_point: '/mnt/DataPool/Kubernetes'
+nfs_mount_point: '/srv/nfs-exports/k8s-pv'
 
 # NFS Provisioner Name
 nfs_provisioner: 'datapool'
@@ -295,7 +295,7 @@ metallb_ap4_protocol: ''
 
 # The CIDRs of your address pools.
 #metallb_ap1_cidr: '192.168.1.1/24'
-metallb_ap1_cidr: '192.168.1.50-192.168.1.69'
+metallb_ap1_cidr: '192.168.1.150-192.168.1.169'
 metallb_ap2_cidr: ''
 metallb_ap3_cidr: ''
 metallb_ap4_cidr: ''
@@ -309,7 +309,7 @@ metallb_ap4_cidr: ''
 ###############################################################################################
 
 # The IP Address to use
-nginx_load_balancer_ip: '192.168.1.90'
+nginx_load_balancer_ip: '192.168.1.170'
 
 
 ###############################################################################################

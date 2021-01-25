@@ -71,12 +71,6 @@
             }
             EOF
 
-      - name: Installing the necessary Python library dependencies to use the `k8s` Ansible module.
-        become: yes
-        pip:
-            name: ['openshift', 'kubernetes', 'pyyaml', 'requests']
-            extra_args: --upgrade
-
       - name: Enabling the necessary Systemd modules.
         become: yes
         systemd:

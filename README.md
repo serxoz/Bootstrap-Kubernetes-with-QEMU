@@ -22,7 +22,10 @@ Declaratively build a 4 node Kubernetes cluster on Proxmox using Ansible and QEM
 2. DNS Server*
 3. Ansible 2.7.0+. Known incompatibility with a previous build.
 <sub>*A DNS server is not technically required, it is possible to manually add entries corresponding to your node hostnames to your Proxmox's hosts file. </sub>
-
+4. Dependencies for ansible k8s module:
+```sh
+ansible-galaxy collection install kubernetes.core
+```
 
 ## Instructions
 **Required:**

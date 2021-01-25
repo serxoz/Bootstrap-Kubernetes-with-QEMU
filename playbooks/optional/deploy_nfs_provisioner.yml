@@ -17,8 +17,7 @@
             
       - name: Deploying NFS Provisioner manifests to Kubernetes
         become: yes
-        k8s:
-            definition: "{{ lookup('template', '../../files/templates/NFS/{{ item }}') | from_yaml }}"        
+        shell: echo "{{ lookup('template', '../../files/templates/NFS/{{ item }}') }}" | kubectl create -f -
         with_items:
             - "ns_nfs_provisioner.yml.j2"
             - "cr_nfs_provisioner.yml.j2"
